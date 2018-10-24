@@ -9,22 +9,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="/static/js/tablefilter_all_min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="/static/css/filtergrid.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/static/css/tiempo_espera.css">
 </head>
 <body>
-    <div >
-            <span style="{ white-space:nowrap}"> <label for="fromDateId">From:</label>
-            <input id="fromDateId"  type="date"  onchange="handlerFrom(event);" /> </span>
+
+    <h1> Tiempo Espera Promedio </h1>
+    <div class="calendarClass">
+        <span style="{ white-space:nowrap}"><label for="fromDateId">From:</label>
+            <input id="fromDateId" width="276" onchange="handlerFrom(event);"/>
+        </span>
     </div>
 
-    <div>
-            <span style="{ white-space:nowrap}"><label for="toDateId">To:</label>
-            <input id="toDateId" type="date" onchange="handlerTo(event);" /> </span>
+    <div class="calendarClass">
+        <span style="{ white-space:nowrap}"><label for="toDateId">To:</label>
+            <input id="toDateId" width="276" onchange="handlerTo(event);"/>
+        </span>
     </div>
+
+    <!--<div>
+            <span style="{ white-space:nowrap}"><label for="toDateId">To:</label>
+            <input id="datepicker" width="276" />
+            </span>
+    </div>-->
     <div class="container">
-        <h1> Tiempo Espera Promedio </h1>
         <table class="table" id="table" >
             <thead class="thead-dark">
             <tr>

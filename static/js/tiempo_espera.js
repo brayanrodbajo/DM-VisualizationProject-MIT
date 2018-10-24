@@ -35,6 +35,7 @@ function updateTable(dataset) {
 
         tbdy.appendChild(tr);
     }
+
 }
 
 /****** DATES **********/
@@ -54,6 +55,20 @@ if(mm<10) {
 
 var dateFrom= "0001-01-01";
 var dateTo= yyyy + '/' + mm + '/' + dd;
+
+
+$('#fromDateId').datepicker({
+    uiLibrary: 'bootstrap4',
+    format: 'yyyy-dd-mm'
+});
+
+$('#toDateId').datepicker({
+    uiLibrary: 'bootstrap4',
+    minDate: function () {
+        return $('#fromDateId').val();
+    },
+    format: 'yyyy-dd-mm'
+});
 
 /* manage date in date from input on change */
 function handlerFrom(e) {

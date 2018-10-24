@@ -37,7 +37,12 @@ def query_tiempo_espera_horas(filter='ips'):
 
         if filter == 'ips':
             # execute a statement
-            cur.execute('SELECT key_fecha_atencion, key_ips, tiempo_espera_horas FROM citas_medicas')
+            cur.execute('SELECT dim_ips.municipio, dim_ips.nombre, AVG(tiempo_espera_horas)::numeric::integer as horas_de_espera'
+            +' FROM citas_medicas, dim_ips'
+            +' WHERE dim_ips.key_ips = citas_medicas. key_ips'
+            +' GROUP BY dim_ips.nombre, dim_ips.municipio'
+            +' ORDER BY avg(tiempo_espera_horas) DESC'
+            )
 
         print("The number of rows: ", cur.rowcount)
         # display the rows

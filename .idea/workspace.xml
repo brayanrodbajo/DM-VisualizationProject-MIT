@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61f58e55-6112-47c2-96cc-12423f42d0b0" name="Default Changelist" comment="" />
+    <list default="true" id="61f58e55-6112-47c2-96cc-12423f42d0b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/js/pie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/tiempo_espera.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/tiempo_espera.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/d3.legend.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/palette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/tiempo_espera.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tiempo_espera.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pie.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,53 +22,57 @@
     <session id="-771970617">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.50" value="2" />
+          <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.55" value="2" />
           <entry key="project.open.time.75" value="1" />
+          <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.96" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="ini" value="1" />
           <entry key="ipynb" value="1" />
-          <entry key="js" value="2" />
-          <entry key="py" value="4" />
+          <entry key="js" value="3" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="2" />
           <entry key="IPNB" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="DMProject" value="3" />
           <entry key="Python Console" value="1" />
-          <entry key="css" value="63" />
-          <entry key="html" value="207" />
-          <entry key="js" value="1888" />
-          <entry key="py" value="327" />
+          <entry key="css" value="83" />
+          <entry key="html" value="333" />
+          <entry key="js" value="2001" />
+          <entry key="py" value="865" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="63" />
-          <entry key="HTML" value="207" />
-          <entry key="JavaScript" value="1888" />
-          <entry key="Python" value="328" />
+          <entry key="CSS" value="83" />
+          <entry key="HTML" value="333" />
+          <entry key="JavaScript" value="2001" />
+          <entry key="Python" value="869" />
         </counts>
       </usages-collector>
     </session>
@@ -86,19 +99,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
+        <entry file="file://$PROJECT_DIR$/templates/pie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tiempo_espera.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            <state relative-caret-position="68">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -107,11 +111,28 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/tiempo_espera.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/tiempo_espera.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/pie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="186" column="50" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
+            <state relative-caret-position="17">
+              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+              <folding>
+                <element signature="e#15#1247#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,19 +140,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/tiempo_espera.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/d3.legend.js">
+        <entry file="file://$PROJECT_DIR$/static/js/palette.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            <state relative-caret-position="25500">
+              <caret line="1500" column="1" selection-start-line="1500" selection-start-column="1" selection-end-line="1500" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#77#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,8 +170,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="160">
+              <caret line="39" column="109" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -153,7 +183,7 @@
         <entry file="file://$PROJECT_DIR$/database.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="11" selection-start-column="1" selection-end-column="11" />
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -165,15 +195,14 @@
       <list>
         <option value="Jupyter Notebook" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>titl</find>
       <find>label</find>
       <find>legendRectSize</find>
       <find>graph</find>
@@ -203,21 +232,26 @@
       <find>svg</find>
       <find>append</find>
       <find>append(&quot;s</find>
+      <find>upda</find>
     </findStrings>
     <replaceStrings>
       <replace>value</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.ipynb" />
         <option value="$PROJECT_DIR$/database.ini" />
+        <option value="$PROJECT_DIR$/static/js/d3.legend.js" />
+        <option value="$PROJECT_DIR$/static/css/tiempo_espera.css" />
+        <option value="$PROJECT_DIR$/templates/pie.html" />
+        <option value="$PROJECT_DIR$/templates/tiempo_espera.html" />
         <option value="$PROJECT_DIR$/database.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/static/js/d3.legend.js" />
-        <option value="$PROJECT_DIR$/templates/tiempo_espera.html" />
-        <option value="$PROJECT_DIR$/static/css/tiempo_espera.css" />
         <option value="$PROJECT_DIR$/static/js/tiempo_espera.js" />
       </list>
     </option>
@@ -234,12 +268,14 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,10 +288,22 @@
               <item name="DMProject" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DMProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMProject" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -263,7 +311,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539012355841" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540386476658" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -294,9 +342,6 @@
       <module name="DMProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Users\bryan\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -338,12 +383,9 @@
       <module name="DMProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Users\bryan\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -385,12 +427,16 @@
       <workItem from="1538885302185" duration="1818000" />
       <workItem from="1538913432456" duration="6767000" />
       <workItem from="1538956367803" duration="14526000" />
-      <workItem from="1539012037351" duration="285000" />
+      <workItem from="1539012037351" duration="541000" />
+      <workItem from="1539120022113" duration="688000" />
+      <workItem from="1540327953767" duration="6540000" />
+      <workItem from="1540349069060" duration="2933000" />
+      <workItem from="1540381164819" duration="4849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62135000" />
+    <option name="totallyTimeSpent" value="77401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,8 +449,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.2806354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" sideWeight="0.5032787" side_tool="true" weight="0.26096824" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -413,14 +460,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.8729198" visible="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12708019" side_tool="true" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.8721634" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12783661" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -481,17 +528,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$USER_HOME$/Desktop/alex/chemo_sql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        <state relative-caret-position="119">
+          <caret line="122" column="180" lean-forward="true" selection-start-line="122" selection-start-column="179" selection-end-line="122" selection-end-column="180" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tiempo_espera.html">
+    <entry file="file://$PROJECT_DIR$/static/js/palette.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        <state relative-caret-position="25500">
+          <caret line="1500" column="1" selection-start-line="1500" selection-start-column="1" selection-end-line="1500" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -501,44 +562,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/tiempo_espera.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/d3.legend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="160">
+          <caret line="39" column="109" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database.ini">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="1" selection-end-column="11" />
+        <state relative-caret-position="136">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/pie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#1247#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tiempo_espera.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/tiempo_espera.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="186" column="50" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

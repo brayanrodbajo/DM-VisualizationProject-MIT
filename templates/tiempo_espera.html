@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Tiempo Espera Promedio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-    <script src='https://d3js.org/d3-scale-chromatic.v1.min.js'></script>
-    <script src='/static/js/d3.legend.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/tiempo_espera.css">
 </head>
 <body>
-    <div >
-        <span style="{ white-space:nowrap}"> <label for="fromDateId">From:</label>
-        <input id="fromDateId"  type="date"  onchange="handlerFrom(event);" /> </span>
-    </div>
+<div class="container">
 
-    <div>
-        <span style="{ white-space:nowrap}"><label for="toDateId">To:</label>
-        <input id="toDateId" type="date" onchange="handlerTo(event);" /> </span>
-    </div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Municipio</th>
+            <th scope="col">IPS</th>
+            <th scope="col">Horas promedio de espera</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in dataset_tiempo_espera %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-    <div class="container">
-
-        <div id="pie"></div>
-
-        <div class="legend3">
-            <h3>D3 Vertical Legend</h3>
-            <div class="legend3"></div>
-        </div>
-    </div>
+</div>
 
 </body>
-<script src="/static/js/tiempo_espera.js"></script>
 
 </html>

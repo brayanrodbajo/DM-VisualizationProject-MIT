@@ -13,13 +13,18 @@ def tiempo_espera():
     if request.method == 'POST':
         data = request.get_json()
         tiempo_espera = query_tiempo_espera_horas(data['date_from'], data['date_to'])
-        return json.dumps({'dataset':tiempo_espera});
+        return json.dumps({'dataset':tiempo_espera})
 
 
-@app.route('/numero_pacientes',  methods=['GET'])
+@app.route('/numero_pacientes',  methods=['GET', 'POST'])
 def numero_pacientes():
-    numero_pacientes= query_numero_pacientes()
-    return render_template('numero_pacientes.html', dataset=numero_pacientes)
+    if request.method == 'GET':
+        numero_pacientes = query_numero_pacientes()
+        return render_template('numero_pacientes.html', dataset=numero_pacientes)
+    if request.method == 'POST':
+        data = request.get_json()
+        numero_pacientes = query_numero_pacientes(data['date_from'], data['date_to'])
+        return json.dumps({'dataset':numero_pacientes})
 
 
 if __name__ == '__main__':

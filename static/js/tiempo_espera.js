@@ -59,7 +59,7 @@ var dateTo= yyyy + '/' + mm + '/' + dd;
 
 $('#fromDateId').datepicker({
     uiLibrary: 'bootstrap4',
-    format: 'yyyy-dd-mm'
+    format: 'yyyy-mm-dd'
 });
 
 $('#toDateId').datepicker({
@@ -67,7 +67,7 @@ $('#toDateId').datepicker({
     minDate: function () {
         return $('#fromDateId').val();
     },
-    format: 'yyyy-dd-mm'
+    format: 'yyyy-mm-dd'
 });
 
 /* manage date in date from input on change */

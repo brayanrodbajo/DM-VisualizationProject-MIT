@@ -43,7 +43,7 @@ def query_tiempo_espera_horas(date_from='0001-01-01', date_to=None):
         cur.execute('SELECT dim_ips.municipio, dim_ips.nombre, AVG(tiempo_espera_horas)::numeric::integer as horas_de_espera'
                     +' FROM citas_medicas, dim_ips, dim_fecha'
                     +' WHERE dim_ips.key_ips = citas_medicas. key_ips AND dim_fecha.key_date = citas_medicas.key_fecha_atencion'
-                    +" AND dim_fecha.date >= '"+date_from +"' AND dim_fecha.date <= '" +date_to + "' "
+                    +" AND dim_fecha.date >= '"+date_from +"' AND dim_fecha.date <= '" + date_to + "' "
                     +' GROUP BY dim_ips.nombre, dim_ips.municipio'
                     +' ORDER BY avg(tiempo_espera_horas) DESC'
                     )
@@ -64,7 +64,10 @@ def query_tiempo_espera_horas(date_from='0001-01-01', date_to=None):
             print('Database connection closed.')
 
 
-def query_numero_pacientes():
+def query_numero_pacientes(date_from='0001-01-01', date_to=None):
+    if date_to is None:
+        now = datetime.datetime.now()
+        date_to = now.strftime("%Y-%m-%d")
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -80,10 +83,11 @@ def query_numero_pacientes():
 
         # execute a statement
         cur.execute('SELECT dim_ips.departamento, dim_ips.municipio, dim_ips.nombre,  COUNT(*) as numero_pacientes'
-                    +' FROM citas_medicas, dim_ips'
-                    +' WHERE dim_ips.key_ips = citas_medicas. key_ips'
-                    +' GROUP BY dim_ips.nombre, dim_ips.municipio, dim_ips.departamento'
-                    +' ORDER BY COUNT(*) DESC'
+                    + ' FROM citas_medicas, dim_ips, dim_fecha'
+                    + ' WHERE dim_ips.key_ips = citas_medicas. key_ips AND dim_fecha.key_date = citas_medicas.key_fecha_atencion'
+                    + " AND dim_fecha.date >= '" + date_from + "' AND dim_fecha.date <= '" + date_to + "' "
+                    + ' GROUP BY dim_ips.nombre, dim_ips.municipio, dim_ips.departamento'
+                    + ' ORDER BY COUNT(*) DESC'
                     )
 
         print("The number of rows: ", cur.rowcount)

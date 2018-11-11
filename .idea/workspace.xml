@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61f58e55-6112-47c2-96cc-12423f42d0b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.ini" beforeDir="false" afterPath="$PROJECT_DIR$/database.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/tiempo_espera.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/tiempo_espera.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,10 +61,10 @@
           <entry key="css" value="206" />
           <entry key="dummy" value="1" />
           <entry key="html" value="736" />
-          <entry key="ini" value="1" />
+          <entry key="ini" value="2" />
           <entry key="js" value="2628" />
           <entry key="py" value="1482" />
-          <entry key="txt" value="115" />
+          <entry key="txt" value="140" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -76,7 +72,7 @@
           <entry key="CSS" value="206" />
           <entry key="HTML" value="736" />
           <entry key="JavaScript" value="2628" />
-          <entry key="PLAIN_TEXT" value="117" />
+          <entry key="PLAIN_TEXT" value="143" />
           <entry key="Python" value="1486" />
         </counts>
       </usages-collector>
@@ -209,8 +205,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -364,7 +360,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541940992758" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541941304023" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -499,7 +495,7 @@
       <workItem from="1540434751664" duration="3307000" />
       <workItem from="1541788233534" duration="1047000" />
       <workItem from="1541820625981" duration="1241000" />
-      <workItem from="1541937874694" duration="2335000" />
+      <workItem from="1541937874694" duration="2624000" />
     </task>
     <task id="LOCAL-00001" summary="tiempo de espera promedio works without filters">
       <created>1540386533399</created>
@@ -550,11 +546,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540416431673</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="numero_pacientes working">
+      <created>1541940902442</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541940902442</updated>
+    </task>
+    <task id="LOCAL-00009" summary="numero_pacientes working">
+      <created>1541941070808</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541941070808</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110057000" />
+    <option name="totallyTimeSpent" value="110346000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,8 +577,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.18683812" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.18683812" />
       <window_info id="Structure" order="1" sideWeight="0.5032787" side_tool="true" weight="0.26096824" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -583,7 +594,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.871407" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.871407" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12859304" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -643,7 +654,8 @@
     <MESSAGE value="change css name" />
     <MESSAGE value="time filter added." />
     <MESSAGE value="prettier calendar" />
-    <option name="LAST_COMMIT_MESSAGE" value="prettier calendar" />
+    <MESSAGE value="numero_pacientes working" />
+    <option name="LAST_COMMIT_MESSAGE" value="numero_pacientes working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.ipynb" />
@@ -767,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>

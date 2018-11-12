@@ -29,7 +29,7 @@ def numero_pacientes():
 
 
 @app.route('/utilizacion_pacientes',  methods=['GET', 'POST'])
-def numero_pacientes():
+def utilizacion_pacientes():
     if request.method == 'GET':
         utilizacion_pacientes = query_utilizacion_pacientes()
         return render_template('utilizacion_pacientes.html', dataset=utilizacion_pacientes)

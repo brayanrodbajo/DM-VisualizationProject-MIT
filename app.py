@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify, redirect, session
-from database import query_tiempo_espera_horas, query_numero_pacientes
+from database import query_tiempo_espera_horas, query_numero_pacientes, query_utilizacion_pacientes
 import json
 
 app = Flask(__name__)
@@ -25,6 +25,18 @@ def numero_pacientes():
         data = request.get_json()
         numero_pacientes = query_numero_pacientes(data['date_from'], data['date_to'])
         return json.dumps({'dataset':numero_pacientes})
+
+
+
+@app.route('/utilizacion_pacientes',  methods=['GET', 'POST'])
+def numero_pacientes():
+    if request.method == 'GET':
+        utilizacion_pacientes = query_utilizacion_pacientes()
+        return render_template('utilizacion_pacientes.html', dataset=utilizacion_pacientes)
+    if request.method == 'POST':
+        data = request.get_json()
+        utilizacion_pacientes = query_utilizacion_pacientes(data['date_from'], data['date_to'])
+        return json.dumps({'dataset':utilizacion_pacientes})
 
 
 if __name__ == '__main__':

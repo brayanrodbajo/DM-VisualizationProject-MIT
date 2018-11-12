@@ -106,5 +106,62 @@ def query_numero_pacientes(date_from='0001-01-01', date_to=None):
             print('Database connection closed.')
 
 
+def query_utilizacion_pacientes(date_from='0001-01-01', date_to=None):
+    if date_to is None:
+        now = datetime.datetime.now()
+        date_to = now.strftime("%Y-%m-%d")
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # read connection parameters
+        params = config()
+
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+
+        # create a cursor
+        cur = conn.cursor()
+
+        # execute a statement
+        cur.execute(
+            """SELECT 
+            sub.tipo_usuario,
+            CASE
+              WHEN sub.fecha_nacimiento  > '01-jan-1993'  THEN '1-25' 
+              WHEN sub.fecha_nacimiento > '01-jan-1968' THEN '25-50'
+              WHEN sub.fecha_nacimiento > '01-jan-1943' THEN '50-75' 
+              ELSE '75+' 
+            END AS Age_Range, 
+            COUNT(*),
+            SUM(CASE WHEN sub.sexo = 'M' THEN 1 ELSE 0 END) AS Males,
+            SUM(CASE WHEN sub.sexo = 'F' THEN 1 ELSE 0 END) AS Females
+            FROM dim_fecha, 
+            (
+                SELECT hospitalizaciones.key_fecha_atencion, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento, count(*)
+                FROM dim_persona INNER JOIN hospitalizaciones ON dim_persona.key_persona = hospitalizaciones.key_persona
+                GROUP BY dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento
+            ) as sub
+            WHERE sub.key_fecha_atencion = dim_fecha.fecha_atencion
+            AND dim_fecha.date >= '""" + date_from + """' AND dim_fecha.date <= '""" + date_to + """' 
+            GROUP BY sub.tipo_usuario, Age_Range;"""
+                    )
+
+        print("The number of rows: ", cur.rowcount)
+        # display the rows
+        rows = cur.fetchall()
+        # print(rows[:10])
+        return rows
+
+        # close the communication with the PostgreSQL
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
+
+
 if __name__ == '__main__':
     query_tiempo_espera_horas()

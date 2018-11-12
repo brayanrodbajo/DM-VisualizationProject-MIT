@@ -31,11 +31,14 @@ def numero_pacientes():
 @app.route('/utilizacion_pacientes',  methods=['GET', 'POST'])
 def utilizacion_pacientes():
     if request.method == 'GET':
-        utilizacion_pacientes = query_utilizacion_pacientes()
+        utilizacion_pacientes = query_utilizacion_pacientes("hospitalizaciones")
         return render_template('utilizacion_pacientes.html', dataset=utilizacion_pacientes)
     if request.method == 'POST':
         data = request.get_json()
-        utilizacion_pacientes = query_utilizacion_pacientes(data['date_from'], data['date_to'])
+        if 'date_from' in data:
+            utilizacion_pacientes = query_utilizacion_pacientes(data['servicio'], data['date_from'], data['date_to'])
+        else:
+            utilizacion_pacientes = query_utilizacion_pacientes(data['servicio'])
         return json.dumps({'dataset':utilizacion_pacientes})
 
 

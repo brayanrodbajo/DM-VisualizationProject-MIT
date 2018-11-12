@@ -106,7 +106,7 @@ def query_numero_pacientes(date_from='0001-01-01', date_to=None):
             print('Database connection closed.')
 
 
-def query_utilizacion_pacientes(date_from='0001-01-01', date_to=None):
+def query_utilizacion_pacientes(servicio, date_from='0001-01-01', date_to=None): #servicio=hospitalizaciones or servicio=urgencias
     if date_to is None:
         now = datetime.datetime.now()
         date_to = now.strftime("%Y-%m-%d")
@@ -138,11 +138,11 @@ def query_utilizacion_pacientes(date_from='0001-01-01', date_to=None):
             SUM(CASE WHEN sub.sexo = 'F' THEN 1 ELSE 0 END) AS Females
             FROM dim_fecha, 
             (
-                SELECT hospitalizaciones.key_fecha_atencion, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento, count(*)
-                FROM dim_persona INNER JOIN hospitalizaciones ON dim_persona.key_persona = hospitalizaciones.key_persona
-                GROUP BY dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento
+                SELECT """+servicio+""".key_fecha_atencion, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento, count(*)
+                FROM dim_persona INNER JOIN """+servicio+""" ON dim_persona.key_persona = """+servicio+""".key_persona
+                GROUP BY """+servicio+""".key_fecha_atencion, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento
             ) as sub
-            WHERE sub.key_fecha_atencion = dim_fecha.fecha_atencion
+            WHERE sub.key_fecha_atencion = dim_fecha.key_date
             AND dim_fecha.date >= '""" + date_from + """' AND dim_fecha.date <= '""" + date_to + """' 
             GROUP BY sub.tipo_usuario, Age_Range;"""
                     )
@@ -150,7 +150,7 @@ def query_utilizacion_pacientes(date_from='0001-01-01', date_to=None):
         print("The number of rows: ", cur.rowcount)
         # display the rows
         rows = cur.fetchall()
-        # print(rows[:10])
+        # print(rows[:5])
         return rows
 
         # close the communication with the PostgreSQL

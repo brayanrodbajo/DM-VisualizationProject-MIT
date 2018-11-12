@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Utilizacion del Sistema</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <!-- This is a copy of palette.js -->
+    <script src="/static/js/palette.js"></script>
+    <script type=text/javascript>
+        var dataset = {{dataset | tojson}};
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/utilizacion_pacientes.css">
+</head>
+<body>
+
+    <h1> Utilización del Sistema </h1>
+    <div class="calendarClass">
+        <span style="{ white-space:nowrap}"><label for="fromDateId">From:</label>
+            <input id="fromDateId" width="276" onchange="handlerFrom(event);"/>
+        </span>
+    </div>
+
+    <div class="calendarClass">
+        <span style="{ white-space:nowrap}"><label for="toDateId">To:</label>
+            <input id="toDateId" width="276" onchange="handlerTo(event);"/>
+        </span>
+    </div>
+
+
+    <button onclick="sendHosp()"> Hospitalizaciones </button>
+    <button onclick="sendUrg()"> Urgencias </button>
+
+    <div class="container">
+        <div id="charts">
+            <div id="chart1" class="chartdiv"></div>
+            <div id="chart2" class="chartdiv"></div>
+            <div id="chart3" class="chartdiv"></div>
+            <div id="chart4" class="chartdiv"></div>
+        </div>
+    </div>
+
+</body>
+<script src="/static/js/utilizacion_pacientes.js"></script>
+
+</html>

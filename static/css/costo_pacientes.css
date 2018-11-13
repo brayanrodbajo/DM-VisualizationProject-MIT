@@ -1,0 +1,19 @@
+.calendarClass{
+    display: inline-block;
+}
+
+#charts {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    font-size: 8px;
+}
+
+.chartdiv {
+    width		: 500px;
+    height		: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

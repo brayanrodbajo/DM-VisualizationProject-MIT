@@ -163,5 +163,62 @@ def query_utilizacion_pacientes(servicio, date_from='0001-01-01', date_to=None):
             print('Database connection closed.')
 
 
+def query_costo_pacientes(date_from='0001-01-01', date_to=None):
+    if date_to is None:
+        now = datetime.datetime.now()
+        date_to = now.strftime("%Y-%m-%d")
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # read connection parameters
+        params = config()
+
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+
+        # create a cursor
+        cur = conn.cursor()
+
+        # execute a statement
+        cur.execute(
+            """SELECT 
+                sub.tipo_usuario,
+                CASE
+                  WHEN sub.fecha_nacimiento  > '01-jan-1993'  THEN '1-25' 
+                  WHEN sub.fecha_nacimiento > '01-jan-1968' THEN '25-50'
+                  WHEN sub.fecha_nacimiento > '01-jan-1943' THEN '50-75' 
+                  ELSE '75+' 
+                END AS Age_Range, 
+                SUM(sub.sum) AS total,
+                SUM(CASE WHEN sub.sexo = 'M' THEN sub.sum ELSE 0 END) AS Males,
+                SUM(CASE WHEN sub.sexo = 'F' THEN sub.sum ELSE 0 END) AS Females
+                FROM 
+                (
+                    SELECT formula_medica.key_date, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento, SUM(formula_medica.precio_total)::numeric::integer
+                    FROM dim_fecha, formula_medica, dim_persona  
+                    WHERE  dim_fecha.key_date=formula_medica.key_date AND dim_persona.key_persona = formula_medica.key_persona 
+                    AND dim_fecha.date >= '""" + date_from + """' AND dim_fecha.date <= '""" + date_to + """' 
+                    GROUP BY formula_medica.key_date, dim_persona.tipo_usuario, dim_persona.key_persona, dim_persona.sexo, dim_persona.fecha_nacimiento
+                ) AS sub
+                GROUP BY sub.tipo_usuario, Age_Range;"""
+                    )
+
+        print("The number of rows: ", cur.rowcount)
+        # display the rows
+        rows = cur.fetchall()
+        # print(rows[:5])
+        return rows
+
+        # close the communication with the PostgreSQL
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
+
+
 if __name__ == '__main__':
     query_tiempo_espera_horas()

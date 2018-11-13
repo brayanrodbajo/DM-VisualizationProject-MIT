@@ -1,6 +1,5 @@
 
 console.log(dataset);
-var servicio = "hospitalizaciones";
 var ageRangeDS = [
     {
         "title": "1-25",
@@ -290,7 +289,7 @@ var chart1 = AmCharts.makeChart("chart1", {
     "startDuration": 0,
     "pullOutRadius": 0,
     "color": "#fff",
-    "fontSize": 25,
+    "fontSize": 20,
     "titleField": "title",
     "valueField": "value",
     "colorField": "color",
@@ -299,7 +298,7 @@ var chart1 = AmCharts.makeChart("chart1", {
     "radius": 25,
     "innerRadius": 0,
     "labelText": "[[title]]",
-    "balloonText": "[[title]]: [[value]]"
+    "balloonText": "[[title]]: $[[value]]"
 });
 
 var chart2 = AmCharts.makeChart("chart2", {
@@ -320,7 +319,7 @@ var chart2 = AmCharts.makeChart("chart2", {
     "outlineAlpha": 1,
     "outlineThickness": 4,
     "labelText": "[[title]]",
-    "balloonText": "[[title]]: [[value]]"
+    "balloonText": "[[title]]: $[[value]]"
 });
 
 var chart3 = AmCharts.makeChart("chart3", {
@@ -341,7 +340,7 @@ var chart3 = AmCharts.makeChart("chart3", {
     "outlineAlpha": 1,
     "outlineThickness": 4,
     "labelText": "[[title]]",
-    "balloonText": "[[title]]: [[value]]"
+    "balloonText": "[[title]]: $[[value]]"
 });
 
 var chart4 = AmCharts.makeChart("chart4", {
@@ -362,7 +361,7 @@ var chart4 = AmCharts.makeChart("chart4", {
     "outlineAlpha": 1,
     "outlineThickness": 4,
     "labelText": "[[title]]",
-    "balloonText": "[[title]]: [[value]]",
+    "balloonText": "[[title]]: $[[value]]",
     "allLabels": [{
         "text": "",
         "bold": true,
@@ -428,42 +427,10 @@ function handlerTo(e) {
 function sendData(){
 
     $.ajax({
-        url: "/utilizacion_pacientes",
+        url: "/costo_pacientes",
         type: "POST",
-        data: JSON.stringify({servicio: servicio, date_from: dateFrom.replace(/\//g, '-'), date_to: dateTo.replace(/\//g, '-')}),
+        data: JSON.stringify({date_from: dateFrom.replace(/\//g, '-'), date_to: dateTo.replace(/\//g, '-')}),
         contentType: "application/json; charset=utf-8",
         success: function(dat) { console.log(JSON.parse(dat)); updateChart(JSON.parse(dat)["dataset"]); }
     });
-}
-
-function sendHosp() {
-    if (servicio != "hospitalizaciones"){
-        $.ajax({
-            url: "/utilizacion_pacientes",
-            type: "POST",
-            data: JSON.stringify({servicio: "hospitalizaciones"}),
-            contentType: "application/json; charset=utf-8",
-            success: function (dat) {
-                servicio = "hospitalizaciones";
-                console.log(JSON.parse(dat));
-                updateChart(JSON.parse(dat)["dataset"]);
-            }
-        });
-    }
-}
-
-function sendUrg(){
-    if (servicio != "urgencias") {
-        $.ajax({
-            url: "/utilizacion_pacientes",
-            type: "POST",
-            data: JSON.stringify({servicio: "urgencias"}),
-            contentType: "application/json; charset=utf-8",
-            success: function (dat) {
-                servicio = "urgencias";
-                console.log(JSON.parse(dat));
-                updateChart(JSON.parse(dat)["dataset"]);
-            }
-        });
-    }
 }

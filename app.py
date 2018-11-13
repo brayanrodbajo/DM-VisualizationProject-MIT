@@ -5,6 +5,21 @@ import json
 app = Flask(__name__)
 
 
+@app.route('/',  methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        return render_template('index.html')
+    if request.method == 'POST':
+        data = request.get_json()
+        if data['req']=='te':
+            return redirect('/tiempo_espera')
+        elif data['req']=='np':
+            return redirect('/numero_pacientes')
+        elif data['req']=='up':
+            return redirect('/utilizacion_pacientes')
+        else:
+            return redirect('/costo_pacientes')
+
 @app.route('/tiempo_espera',  methods=['GET', 'POST'])
 def tiempo_espera():
     if request.method == 'GET':
